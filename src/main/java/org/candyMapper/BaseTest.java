@@ -9,6 +9,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -55,6 +56,12 @@ public class BaseTest {
     public void buttonClick(By by) {
         waitElementToBePresent(by);
         driver.findElement(by).click();
+    }
+
+    public void javaScriptButtonClickAndSendText(By by, String text) {
+        waitElementToBePresent(by);
+        WebElement field = driver.findElement(by);
+        new Actions(driver).click(field).sendKeys(field, text).perform();
     }
 
     public void javaScriptButtonClick(By by) {
@@ -104,5 +111,11 @@ public class BaseTest {
             System.out.println("ELEMENT NIE WIDOCZNY: ---> " + this.getClass().getSimpleName() + ", ---> " + by.toString());
         }
         return clickable;
+    }
+
+    public void scrollToElement(By by) {
+        WebElement element = driver.findElement(by);
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element).perform();
     }
 }
