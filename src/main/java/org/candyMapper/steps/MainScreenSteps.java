@@ -10,6 +10,7 @@ public class MainScreenSteps extends MainScreenPage {
 
     PageOperators pageOperators = new PageOperators();
     Waits waits = new Waits();
+    SoftAssert softAssert = new SoftAssert();
 
     public void fillNameField() {
         log.info("Wypelniam pole \"Name\".");
@@ -37,9 +38,18 @@ public class MainScreenSteps extends MainScreenPage {
     public void conformationMessageAssertion() {
         log.info("Wykonanie assercji po wyslaniu wiadomosci.");
         waits.waitElementToBePresent(confirmationMessage);
-        SoftAssert softAssert = new SoftAssert();
-        softAssert.assertEquals(pageOperators.getText(confirmationMessage), "Thank you for your inquiry! We will get back to you within 48 hours.",
+        softAssert.assertEquals(pageOperators.getText(confirmationMessage),
+                "Thank you for your inquiry! We will get back to you within 48 hours.",
                 "Incorrect confirmation message.");
+        softAssert.assertAll();
+    }
+
+    public void checkIfMessageToCompleteEmailFieldIsAppeared() {
+        log.info("Wykonanie assercji - powinien pojawic sie komunikat o koniecznosci uzupelnienia pola email.");
+        waits.waitElementToBePresent(invalidEmailAddressMessage);
+        softAssert.assertEquals(pageOperators.getText(invalidEmailAddressMessage),
+                "Please enter a valid email address.",
+                "Incorrect email validation message message.");
         softAssert.assertAll();
     }
 }

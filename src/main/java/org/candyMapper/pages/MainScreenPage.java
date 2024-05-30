@@ -9,4 +9,5 @@ public class MainScreenPage extends BaseTest {
     protected final By textAreaField = By.xpath("//div[@data-aid='CONTACT_FORM_CONTAINER_REND']/form/div/div/textarea[@data-aid='CONTACT_FORM_MESSAGE']");
     protected final By sendMessageBtn = By.xpath("//div[@data-aid='CONTACT_FORM_CONTAINER_REND']/form/div/div/div/button");
     protected final By confirmationMessage = By.xpath("//span[contains(text(),'Thank you for your inquiry!')]");
+    protected final By invalidEmailAddressMessage = By.xpath("//p[@data-aid='CONTACT_EMAIL_ERR_REND']");
 }

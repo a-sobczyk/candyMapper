@@ -18,4 +18,13 @@ public class SendMessageTest extends BaseTest {
         mainScreenSteps.sendMessageBtnClick();
         mainScreenSteps.conformationMessageAssertion();
     }
+
+    @Test
+    public void iTrySendingMessageWithoutEmailField_ThenTestResultsMessageAboutNeedToCompleteEmailField() {
+        mainScreenPopupSteps.closePopup();
+        mainScreenSteps.fillNameField();
+        mainScreenSteps.fillTextAreaField();
+        mainScreenSteps.sendMessageBtnClick();
+        mainScreenSteps.checkIfMessageToCompleteEmailFieldIsAppeared();
+    }
 }
