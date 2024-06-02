@@ -6,9 +6,11 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import java.util.List;
+
 public class PageOperators extends BaseTest {
 
-    Waits waits = new Waits();
+    private final Waits waits = new Waits();
 
     public void buttonClick(By by) {
         log.info("Przed kliknieciem przycisku: " + by);
@@ -47,5 +49,9 @@ public class PageOperators extends BaseTest {
         WebElement element = driver.findElement(by);
         log.info("Pobralem tekst elementu: " + by);
         return element.getText();
+    }
+
+    public List<WebElement> findElements(By by) {
+        return driver.findElements(by);
     }
 }

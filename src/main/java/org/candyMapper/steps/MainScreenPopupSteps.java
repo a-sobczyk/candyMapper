@@ -5,7 +5,7 @@ import org.candyMapper.pages.MainScreenPopupPage;
 
 public class MainScreenPopupSteps extends MainScreenPopupPage {
 
-    PageOperators pageOperators = new PageOperators();
+    private final PageOperators pageOperators = new PageOperators();
 
     public void closePopup() {
         pageOperators.buttonClick(closeIconButton);

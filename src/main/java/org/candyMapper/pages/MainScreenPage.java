@@ -10,4 +10,7 @@ public class MainScreenPage extends BaseTest {
     protected final By sendMessageBtn = By.xpath("//div[@data-aid='CONTACT_FORM_CONTAINER_REND']/form/div/div/div/button");
     protected final By confirmationMessage = By.xpath("//span[contains(text(),'Thank you for your inquiry!')]");
     protected final By invalidEmailAddressMessage = By.xpath("//p[@data-aid='CONTACT_EMAIL_ERR_REND']");
+    protected final By ConnectWithSocialMediaTxt = By.xpath("//span[text()='Connect with us on Social Media']");
+    protected final By countyIFrame = By.xpath("//div[@id='bs-6']/span/iframe");
+    protected final By countyDropdownList = By.xpath("//option");
 }
