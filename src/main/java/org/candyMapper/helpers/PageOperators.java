@@ -57,6 +57,7 @@ public class PageOperators extends BaseTest {
     }
 
     public void changeTab(int tabNumber) {
+        log.info("Zmiana zakładki przeglądarki");
         ArrayList<String> tabs = new ArrayList<> (driver.getWindowHandles());
         driver.switchTo().window(tabs.get(tabNumber));
     }
