@@ -6,6 +6,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class PageOperators extends BaseTest {
@@ -53,5 +54,10 @@ public class PageOperators extends BaseTest {
 
     public List<WebElement> findElements(By by) {
         return driver.findElements(by);
+    }
+
+    public void changeTab(int tabNumber) {
+        ArrayList<String> tabs = new ArrayList<> (driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(tabNumber));
     }
 }

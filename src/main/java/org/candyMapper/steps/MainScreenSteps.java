@@ -63,7 +63,7 @@ public class MainScreenSteps extends MainScreenPage {
         log.info("Pobranie wszystkich elementów listy rozwijanej.");
         waits.waitElementToBePresent(ConnectWithSocialMediaTxt);
         pageOperators.scrollToElement(ConnectWithSocialMediaTxt);
-        WebElement iframe  = driver.findElement(countyIFrame);
+        WebElement iframe = driver.findElement(countyIFrame);
         driver.switchTo().frame(iframe);
         return pageOperators.findElements(countyDropdownList);
     }
@@ -71,14 +71,24 @@ public class MainScreenSteps extends MainScreenPage {
     public void checkCountyNamesAndDuplicationsInDropdownList(List<WebElement> dropdownList) {
         log.info("Sprawdzenie unikalnosci nazw oraz ilosci wystapien nazw w dropdown menu.");
         Set<String> set = new HashSet<>();
-        for(WebElement element: dropdownList) {
-            if(!element.getText().equals("Select a County")) {
+        for (WebElement element : dropdownList) {
+            if (!element.getText().equals("Select a County")) {
                 softAssert.assertTrue(set.add(element.getText()), "Duplicate value in drop-down menu: " + element.getText());
             }
         }
-        for(County county : County.values()) {
+        for (County county : County.values()) {
             softAssert.assertTrue(set.contains(county.getText()), "Dropdown menu does not include: " + county.getText());
         }
         softAssert.assertAll();
+    }
+
+    public void halloweenPodcastLinkClick() {
+        waits.waitElementToBePresent(halloweenPodcastLink);
+        pageOperators.scrollToElement(halloweenPodcastLink);
+        pageOperators.javaScriptButtonClick(halloweenPodcastLink);
+    }
+
+    public void changeTabToHalloweenSpecialPodcast() {
+        pageOperators.changeTab(1);
     }
 }
