@@ -8,9 +8,9 @@ import org.junit.jupiter.api.Test;
 
 public class RegistrationTest extends BaseTest {
 
-    final MainScreenPopupSteps mainScreenPopupSteps = new MainScreenPopupSteps();
-    final NavBarSteps navBarSteps = new NavBarSteps();
-    final RegistrationSteps registrationSteps = new RegistrationSteps();
+    private final MainScreenPopupSteps mainScreenPopupSteps = new MainScreenPopupSteps();
+    private final NavBarSteps navBarSteps = new NavBarSteps();
+    private final RegistrationSteps registrationSteps = new RegistrationSteps();
 
     @Test
     public void newUserRegistration() {

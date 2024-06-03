@@ -6,8 +6,8 @@ import org.junit.jupiter.api.Test;
 
 public class SendMessageTest extends BaseTest {
 
-    final MainScreenPopupSteps mainScreenPopupSteps = new MainScreenPopupSteps();
-    final MainScreenSteps mainScreenSteps = new MainScreenSteps();
+    private final MainScreenPopupSteps mainScreenPopupSteps = new MainScreenPopupSteps();
+    private final MainScreenSteps mainScreenSteps = new MainScreenSteps();
 
     @Test
     public void closePopupAndSendContactUsForm() {

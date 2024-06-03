@@ -13,4 +13,16 @@ public class NavBarSteps extends NavBarPage {
         waits.waitElementToBePresent(navBarJoinUsBtn);
         pageOperators.javaScriptButtonClick(navBarJoinUsBtn);
     }
+
+    public void navMoreBtnClick() {
+        log.info("Klikam w przycisk \"More\".");
+        waits.waitElementToBePresent(navMoreBtn);
+        pageOperators.javaScriptButtonClick(navMoreBtn);
+    }
+
+    public void vampirasBlogBtnClick() {
+        log.info("Klikam w przycisk \"Vampira's Blog\"");
+        waits.waitElementToBePresent(vampirasBlogBtn);
+        pageOperators.javaScriptButtonClick(vampirasBlogBtn);
+    }
 }
