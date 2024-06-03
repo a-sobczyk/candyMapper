@@ -7,7 +7,7 @@ import org.openqa.selenium.WebElement;
 
 import java.util.List;
 
-public class DropdownMenuCheckTest extends BaseTest{
+public class DropdownMenuCheckTest extends BaseTest {
 
     private final MainScreenPopupSteps mainScreenPopupSteps = new MainScreenPopupSteps();
     private final MainScreenSteps mainScreenSteps = new MainScreenSteps();

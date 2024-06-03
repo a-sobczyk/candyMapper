@@ -7,9 +7,9 @@ import org.testng.asserts.SoftAssert;
 
 public class HalloweenSpecialPodcastSteps extends HalloweenSpecialPodcastPage {
 
-    PageOperators pageOperators = new PageOperators();
-    Waits waits = new Waits();
-    SoftAssert softAssert = new SoftAssert();
+    private final PageOperators pageOperators = new PageOperators();
+    private final Waits waits = new Waits();
+    private final SoftAssert softAssert = new SoftAssert();
 
     public String getMainTitle() {
         log.info("Pobranie elementu w nowej przeglądarce: " + mainTitle);
