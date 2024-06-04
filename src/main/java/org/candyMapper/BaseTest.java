@@ -1,6 +1,5 @@
 package org.candyMapper;
 
-import io.github.bonigarcia.wdm.WebDriverManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.junit.jupiter.api.AfterEach;
@@ -31,7 +30,6 @@ public class BaseTest {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--test-type");
         options.addArguments("--incognito");
