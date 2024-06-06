@@ -13,6 +13,10 @@ public class PageOperators extends BaseTest {
 
     private final Waits waits = new Waits();
 
+    /**
+     * Metoda klikajaca w przycisk przekazany za pomoca parametru "by".
+     * @param by lokator przycisku
+     */
     public void buttonClick(By by) {
         log.info("Przed kliknieciem przycisku: " + by);
         waits.waitElementToBePresent(by);
@@ -20,6 +24,12 @@ public class PageOperators extends BaseTest {
         log.info("Po kliknieciu przycisku: " + by);
     }
 
+    /**
+     * Metoda wykonujaca javascript, ktory lokalizuje pole tekstowe za pomoca parametru "by",
+     * a nastepnie wkleja text przesłany do metody za pomoca String "text".
+     * @param by lokator pola tekstowego.
+     * @param text text jaki ma byc wklejony do pola.
+     */
     public void javaScriptButtonClickAndSendText(By by, String text) {
         log.info("Przed kliknieciem przycisku i wpisaniu tekstu: " + by);
         waits.waitElementToBePresent(by);
@@ -28,6 +38,10 @@ public class PageOperators extends BaseTest {
         log.info("Po kliknieciu i wpisaniu tekstu: " + by);
     }
 
+    /**
+     * Metoda wykonujaca javascript, ktory klika w przycisk przeslany za pomoca parametru "by",
+     * @param by lokator przycisku.
+     */
     public void javaScriptButtonClick(By by) {
         log.info("Przed kliknieciem przycisku: " + by);
         waits.waitElementToBeClickable(by);
@@ -37,6 +51,10 @@ public class PageOperators extends BaseTest {
         log.info("Po kliknieciu i wpisaniu tekstu: " + by);
     }
 
+    /**
+     * Metoda wykonujaca javascript, ktory przesuwa ekran do elementu przeslanego za pomoca parametru "by",
+     * @param by lokator elementu.
+     */
     public void scrollToElement(By by) {
         log.info("Scrolluje do elementu: " + by);
         WebElement element = driver.findElement(by);
@@ -44,6 +62,11 @@ public class PageOperators extends BaseTest {
         actions.moveToElement(element).perform();
     }
 
+    /**
+     * Metoda pobierajaca tekst ze strony dla elementu przeslanego za pomoca parametru "by",
+     * @param by lokator elementu
+     * @return String - tekst pobrany ze strony
+     */
     public String getText(By by) {
         log.info("Pobieram tekst elementu: " + by);
         waits.waitElementToBePresent(by);
@@ -52,10 +75,19 @@ public class PageOperators extends BaseTest {
         return element.getText();
     }
 
+    /**
+     * Pobiera liste elementow i zwraca liste WebElementow
+     * @param by lokator dla listy elementow np: tabela
+     * @return Liste WebElementow
+     */
     public List<WebElement> findElements(By by) {
         return driver.findElements(by);
     }
 
+    /**
+     * Zmienia zakladke w przegladarce
+     * @param tabNumber nr zakladki
+     */
     public void changeTab(int tabNumber) {
         log.info("Zmiana zakładki przeglądarki");
         ArrayList<String> tabs = new ArrayList<> (driver.getWindowHandles());
