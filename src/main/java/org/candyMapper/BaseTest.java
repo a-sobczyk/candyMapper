@@ -7,6 +7,8 @@ import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -30,11 +32,22 @@ public class BaseTest {
         } catch (IOException ex) {
             ex.printStackTrace();
         }
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--test-type");
-        options.addArguments("--incognito");
-        options.addArguments("--verbose");
-        driver = new ChromeDriver(options);
+        String browser = System.getProperty("browser");
+        if (browser==null) {
+            browser = "chrome";
+        }
+        switch (browser) {
+            case "chrome":
+                ChromeOptions chromeOptions = new ChromeOptions();
+                chromeOptions.addArguments("--test-type");
+                chromeOptions.addArguments("--incognito");
+                chromeOptions.addArguments("--verbose");
+                driver = new ChromeDriver(chromeOptions);
+                break;
+            case "edge":
+                driver = new EdgeDriver();
+                break;
+        }
         driver.manage().deleteAllCookies();
         String url = PROPERTIES.getProperty("CANDY_MAPPER_URL");
         driver.get(url);
