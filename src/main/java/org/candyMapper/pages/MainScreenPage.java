@@ -14,4 +14,5 @@ public class MainScreenPage extends BaseTest {
     protected final By countyIFrame = By.xpath("//div[@id='bs-6']/span/iframe");
     protected final By countyDropdownList = By.xpath("//option");
     protected final By halloweenPodcastLink = By.xpath("//a[@href='https://testguild.com/podcast/automation/a472-paul/']");
+    protected final By dollarAmountText = By.xpath("//span[contains(text(),'Validate Random Dollar Amounts')]");
 }

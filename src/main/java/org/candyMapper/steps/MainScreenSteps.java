@@ -63,6 +63,8 @@ public class MainScreenSteps extends MainScreenPage {
         log.info("Pobranie wszystkich elementów listy rozwijanej.");
         waits.waitElementToBePresent(ConnectWithSocialMediaTxt);
         pageOperators.scrollToElement(ConnectWithSocialMediaTxt);
+        pageOperators.scrollToElement(dollarAmountText);
+        waits.waitElementToBePresent(countyIFrame);
         WebElement iframe = driver.findElement(countyIFrame);
         driver.switchTo().frame(iframe);
         return pageOperators.findElements(countyDropdownList);
