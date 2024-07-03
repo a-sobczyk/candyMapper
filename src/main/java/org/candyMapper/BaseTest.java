@@ -8,7 +8,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.edge.EdgeOptions;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -18,8 +17,8 @@ import java.util.Properties;
 public class BaseTest {
 
     protected static final Logger log = LogManager.getLogger();
-    public static Properties PROPERTIES;
-    public static WebDriver driver;
+    protected static Properties PROPERTIES;
+    protected static WebDriver driver;
 
     @BeforeAll
     public static void testDataSetup() {
@@ -33,7 +32,7 @@ public class BaseTest {
             ex.printStackTrace();
         }
         String browser = System.getProperty("browser");
-        if (browser==null) {
+        if (browser == null) {
             browser = "chrome";
         }
         switch (browser) {

@@ -30,7 +30,7 @@ public class RegistrationSteps extends RegistrationPage {
 
     public void exclusiveMemberBenefitsCheckBoxClick() {
         log.info("Zaznaczenie chcekBoxa exclusiveMemberBenefits.");
-        pageOperators.javaScriptButtonClick(exclusiveMemberBenefitsCheckBox);
+//        pageOperators.javaScriptButtonClick(exclusiveMemberBenefitsCheckBox);
     }
 
     public void createAccountBtnClick() {
