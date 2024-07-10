@@ -18,7 +18,6 @@ public class RegistrationTest extends BaseTest {
         navBarSteps.newUserRegistrationButtonClick();
         registrationSteps.registrationLinkClick();
         registrationSteps.fillRegistrationFields();
-//        registrationSteps.exclusiveMemberBenefitsCheckBoxClick();
         registrationSteps.createAccountBtnClick();
         registrationSteps.checkConfirmationHeadingAndConfirmationText();
     }

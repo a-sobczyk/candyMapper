@@ -28,11 +28,6 @@ public class RegistrationSteps extends RegistrationPage {
         pageOperators.javaScriptButtonClickAndSendText(phoneField, RandomStringUtils.randomNumeric(9));
     }
 
-    public void exclusiveMemberBenefitsCheckBoxClick() {
-        log.info("Zaznaczenie chcekBoxa exclusiveMemberBenefits.");
-//        pageOperators.javaScriptButtonClick(exclusiveMemberBenefitsCheckBox);
-    }
-
     public void createAccountBtnClick() {
         log.info("Przed kliknieciem przycisku \"CREATE ACCOUNT\".");
         pageOperators.javaScriptButtonClick(createAccountBtn);
