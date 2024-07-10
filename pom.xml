@@ -58,6 +58,9 @@
     <profiles>
         <profile>
             <id>chrome</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
             <properties>
                 <browser>chrome</browser>
             </properties>

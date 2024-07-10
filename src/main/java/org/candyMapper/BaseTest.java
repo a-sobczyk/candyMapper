@@ -32,9 +32,6 @@ public class BaseTest {
             ex.printStackTrace();
         }
         String browser = System.getProperty("browser");
-        if (browser == null) {
-            browser = "chrome";
-        }
         switch (browser) {
             case "chrome":
                 ChromeOptions chromeOptions = new ChromeOptions();
