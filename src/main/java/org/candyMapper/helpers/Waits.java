@@ -1,7 +1,6 @@
 package org.candyMapper.helpers;
 
 import org.candyMapper.BaseTest;
-import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,28 +11,28 @@ import java.time.Duration;
 public class Waits extends BaseTest {
 
     /**
-     * Czeka na element zlokalizowany za pomoca parametru "by"
+     * Czeka na element zlokalizowany za pomoca parametru "element"
      *
-     * @param by lokator elemenytu
+     * @param element lokator elemenytu
      */
-    public void waitElementToBePresent(By by) {
-        log.info("Czekam na element: " + by);
+    public void waitElementToBePresent(WebElement element) {
+        log.info("Czekam na element: " + element);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.presenceOfElementLocated(by));
+        wait.until(ExpectedConditions.visibilityOf(element));
     }
 
     /**
      * Czeka na element zlokalizowany za pomoca parametru
      *
-     * @param by  lokator elemenytu
-     * @param sec ilosc sekund oczekiwania na element
+     * @param element lokator elemenytu
+     * @param sec     ilosc sekund oczekiwania na element
      * @return zwraca wartosc true jesli element jest widoczny lub false jesli nie
      */
-    public boolean waitElementToBePresent(By by, Integer sec) {
-        log.info("Czekam na element: " + by);
+    public boolean waitElementToBePresent(WebElement element, Integer sec) {
+        log.info("Czekam na element: " + element);
         try {
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(sec));
-            wait.until(ExpectedConditions.presenceOfElementLocated(by));
+            wait.until(ExpectedConditions.visibilityOf(element));
         } catch (TimeoutException e) {
             log.error("ERROR", e);
             return false;
@@ -44,25 +43,25 @@ public class Waits extends BaseTest {
     /**
      * Oczekuje na znikniecie elementu zlokalizowanego za pomoca parametru
      *
-     * @param by  lokator elemenytu
-     * @param sec ilosc sekund oczekiwania na znikniecie elementu
+     * @param element lokator elemenytu
+     * @param sec     ilosc sekund oczekiwania na znikniecie elementu
      */
-    public void waitUntilElementIsStaleness(By by, Integer sec) {
-        log.info("Czekam na element: " + by);
+    public void waitUntilElementIsStaleness(WebElement element, Integer sec) {
+        log.info("Czekam na element: " + element);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(sec));
-        wait.until(ExpectedConditions.presenceOfElementLocated(by));
-        wait.until(ExpectedConditions.stalenessOf((WebElement) by));
+        wait.until(ExpectedConditions.visibilityOf(element));
+        wait.until(ExpectedConditions.stalenessOf(element));
     }
 
     /**
      * Oczekuje az w element bedzie mozna kliknac
      *
-     * @param by lokator elemenytu
+     * @param element lokator elemenytu
      */
-    public void waitElementToBeClickable(By by) {
-        log.info("Czekam na element: " + by);
+    public void waitElementToBeClickable(WebElement element) {
+        log.info("Czekam na element: " + element);
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.elementToBeClickable(by));
+        wait.until(ExpectedConditions.elementToBeClickable(element));
     }
 
     /**

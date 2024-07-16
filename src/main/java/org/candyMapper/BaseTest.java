@@ -2,6 +2,7 @@ package org.candyMapper;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.WebDriver;
@@ -50,8 +51,8 @@ public class BaseTest {
         driver.manage().window().maximize();
     }
 
-    @AfterEach
-    public void tearDown() {
+    @AfterAll
+    public static void tearDown() {
         log.info("Koniec testu.\n\n");
         driver.quit();
     }
