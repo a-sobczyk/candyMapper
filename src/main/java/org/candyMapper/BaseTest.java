@@ -39,6 +39,7 @@ public class BaseTest {
                 chromeOptions.addArguments("--test-type");
                 chromeOptions.addArguments("--incognito");
                 chromeOptions.addArguments("--verbose");
+                chromeOptions.addArguments("--disable-search-engine-choice-screen");
                 driver = new ChromeDriver(chromeOptions);
                 break;
             case "edge":
